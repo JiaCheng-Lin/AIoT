@@ -3,16 +3,16 @@ from selenium.webdriver.common.keys import Keys
 
 import time
 
-targetURL ="https://aiot.kaitechstudio.com/Login/" # "https://kktix.com/events/fyu2wd-dsfd2/registrations/new" # 演唱會網址 
+targetURL ="https://aiot.kaitechstudio.com/Login/" # 
 ID = "ttu410606122"
 
-driver = webdriver.Chrome()
+driver = webdriver.Chrome() # ChromeDriver 88.0.4324.96 
 
-driver.get(targetURL) # 更改網址以前往不同網頁
+driver.get(targetURL) 
 
 
-element = driver.find_element_by_name("userID")    # 定位賬號輸入框
-element.send_keys(ID)    # 輸入賬號
+element = driver.find_element_by_name("userID")    
+element.send_keys(ID) 
 driver.find_element_by_name("userID").send_keys(Keys.ENTER) 
 # driver.find_element_by_xpath("/html/body/form/button").click()
 
@@ -51,7 +51,7 @@ while True:
         if i.isalpha() or i.isnumeric() :
             Q1Answer += i
         elif i == '|' :
-            Q1Answer += 'ttu410606122'
+            Q1Answer += ID
 
 
     Q2Answer = ''
